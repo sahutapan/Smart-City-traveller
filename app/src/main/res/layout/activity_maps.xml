@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:openDrawer="start"
+    android:fitsSystemWindows="true"
+    android:id="@+id/drawer"
+    tools:ignore="InvalidId">
+
+    <com.google.android.material.navigation.NavigationView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="#76BED0"
+        app:headerLayout="@layout/nav_header"
+        app:menu="@menu/main_menu"
+        app:itemIconTint="#141414"
+        app:itemHorizontalPadding="40dp"
+        app:itemTextAppearance="@style/TextViewStyle"
+        app:itemTextColor="#141414"
+
+        android:id="@+id/nav_menu"
+        />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:ignore="ExtraText">
+
+        <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:map="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/map"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".MapsActivity"
+            tools:layout="@layout/activity_maps" />
+
+        <com.mancj.materialsearchbar.MaterialSearchBar
+            android:id="@+id/searchBar"
+            style="@style/MaterialSearchBarLight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:elevation="10dp"
+            android:radius="16dp"
+            app:mt_hint="Search a place"
+            app:mt_maxSuggestionsCount="10"
+            app:mt_navIconEnabled="true"
+            app:mt_placeholder="Search here"
+            app:mt_speechMode="false" />
+    </RelativeLayout>
+
+</androidx.drawerlayout.widget.DrawerLayout>
